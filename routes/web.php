@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/withouthttps', function () {
+Route::get('/http', function () {
     return view('http');
 })->name('httppage')->middleware('http');
 

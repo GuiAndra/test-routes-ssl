@@ -65,7 +65,7 @@
         </style>
     </head>
     <body>
-        <a href="{{ route('httpspage') }}">HTTP</a>
+        <a href="{{ route('httpspage') }}">HTTPS</a>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
