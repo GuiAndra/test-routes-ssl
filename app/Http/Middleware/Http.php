@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class WithoutHttps
+class Http
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,9 @@ class WithoutHttps
     public function handle($request, Closure $next)
     {
         if ($request->secure()) {
-            return redirect()->$request->getRequestUri();
+            $url = url()->full();
+            $unsecure_url = 'http://'.explode('://', $url)[1];
+            return redirect($unsecure_url);
         }
 
         return $next($request); 
